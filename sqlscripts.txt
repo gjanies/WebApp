@@ -1,0 +1,22 @@
+CREATE TABLE `count` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `val` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_val`()
+BEGIN
+
+select * from count;
+
+END
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_val`()
+BEGIN
+
+update count set val = val + 1;
+
+select val from count;
+
+END
